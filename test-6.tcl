@@ -13,7 +13,7 @@ fix 1  1 1 1  1 1 1;
 # Steel material properties
 set Es 210000;     # MPa     , steel initial Young's modulus;
 set Fy 250;        # MPa     , steel initial yield strength;
-set b 0.0005;      # %       , strain-hardening  ratio;
+set b 0.001;       # %       , strain-hardening  ratio;
 set Hiso [expr $b*$Es]; # MPa     , isotropic hardening modulus;
 set Hkin 0.0;     # MPa     , kinematic hardening modulus;
 

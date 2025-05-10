@@ -131,7 +131,7 @@ def thermal_update(
         else:                                          # no temperature dependence
             out[key] = base_val
 
-    out["initial_strain"] = -_thermal_elongation(T_abs)
+    out["initial_strain"] = -_thermal_elongation(T_abs)/100
     return out
 
 
@@ -161,7 +161,7 @@ class EN1993:
         for tag in self._model.getEleTags(),:
             for pkey, ptag in self._tags.items():
                 self._model.addToParameter(ptag, "element", tag, "allSections", pkey)
-        
+
         for pkey in "Fy", "E":
             self._model.updateParameter(self._tags[pkey], values[pkey])
 
